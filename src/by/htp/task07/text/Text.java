@@ -10,7 +10,7 @@ public class Text implements PartOfText {
 	private String title;
 	
 	public Text () {
-		
+		sentences = new ArrayList<PartOfText>();
 	}
 	
 	public Text(String title) {
@@ -21,13 +21,11 @@ public class Text implements PartOfText {
 	@Override
 	public String content () {
 		
-		List<Sentence> sentences;
-		
 		String text = "";
-		for (PartOfText part : this.getSentences() ) {
-			text = part.toString();
-			
+		for (PartOfText sentence : sentences ) {
+			text = text + sentence.toString();	
 		}
+		
 		return text;
 	}
 

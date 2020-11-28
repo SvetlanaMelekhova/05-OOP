@@ -24,7 +24,7 @@ public class Main {
 	//System.out.println(sentence1.content());
 	
 	Sentence sentence2 = new Sentence ();
-	sentence2.addWord(new Word ("Father"));
+	sentence2.addWord(new Word ("Brother"));
 	sentence2.addWord(new Word ("and"));
 	sentence2.addWord(new Word ("sister"));
 	sentence2.addMark(punct);

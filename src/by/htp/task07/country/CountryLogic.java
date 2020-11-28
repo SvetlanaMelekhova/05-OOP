@@ -3,8 +3,6 @@ package by.htp.task07.country;
 import java.util.ArrayList;
 import java.util.List;
 
-/*Создать объект класса Государство, используя классы Область, Район, Город. Методы: вывести на консоль столицу, количество областей, площадь, областные центры.*/
-
 public class CountryLogic {
 
 	public CountryLogic() {
