@@ -1,8 +1,6 @@
 package by.htp.task07.text;
 
-/*Создать объект класса Текст, используя классы Предложение, Слово. Методы: дополнить текст, вывести на консоль текст, заголовок текста.*/
-
-public class Word {
+public class Word implements PartOfText {
 	
 	private String word;
 	
@@ -12,8 +10,13 @@ public class Word {
 	
 	public Word (String word) {
 		
-		this.word = word;
+		this.word = word;	
+	}
+	
+	@Override
+	public String content() {
 		
+		return word;	
 	}
 
 	public String getWord() {
@@ -53,6 +56,8 @@ public class Word {
 	public String toString() {
 		return  word ;
 	}
+
+	
 	
 	
 

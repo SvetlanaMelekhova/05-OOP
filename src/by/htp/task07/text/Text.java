@@ -3,8 +3,7 @@ package by.htp.task07.text;
 import java.util.ArrayList;
 import java.util.List;
 
-/*Создать объект класса Текст, используя классы Предложение, Слово. Методы: дополнить текст, вывести на консоль текст, заголовок текста.
-*/
+
 public class Text {
 	
 	private List <Sentence> sentences;

@@ -3,9 +3,8 @@ package by.htp.task07.text;
 import java.util.ArrayList;
 import java.util.List;
 
-/*Создать объект класса Текст, используя классы Предложение, Слово. Методы: дополнить текст, вывести на консоль текст, заголовок текста.
-*/
-public class Sentence implements PartOfSentence {
+
+public class Sentence implements PartOfText {
 	
 	private List <Word> words;
 	
@@ -60,6 +59,12 @@ public class Sentence implements PartOfSentence {
 	@Override
 	public String toString() {
 		return "Sentence [words=" + words + "]";
+	}
+
+	@Override
+	public String content() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	
