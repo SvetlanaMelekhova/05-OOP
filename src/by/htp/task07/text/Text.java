@@ -4,22 +4,40 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class Text {
+public class Text implements PartOfText {
 	
-	private List <Sentence> sentences;
+	private List<PartOfText> sentences;
 	private String title;
 	
 	public Text () {
 		
-		sentences = new ArrayList <Sentence>();
-		
 	}
 	
-	public Text (String title) {
-		
+	public Text(String title) {
+		sentences = new ArrayList<PartOfText>();
 		this.title = title;
-		sentences = new ArrayList <Sentence>();
+	}
+	
+	@Override
+	public String content () {
 		
+		List<Sentence> sentences;
+		
+		String text = "";
+		for (PartOfText part : this.getSentences() ) {
+			text = part.toString();
+			
+		}
+		return text;
+	}
+
+	
+	public List<PartOfText> getSentences() {
+		return sentences;
+	}
+
+	public void setSentences(List<PartOfText> sentences) {
+		this.sentences = sentences;
 	}
 
 	public String getTitle() {
@@ -30,18 +48,8 @@ public class Text {
 		this.title = title;
 	}
 
-	public List<Sentence> getSentenses() {
-		return sentences;
-	}
-
-	public void setSentenses(List<Sentence> sentences) {
-		this.sentences = sentences;
-	}
-	
 	public void addSentence (Sentence sentence) {
-		
 		sentences.add(sentence);
-		
 	}
 
 	@Override
@@ -79,6 +87,12 @@ public class Text {
 	public String toString() {
 		return "Text [sentences=" + sentences + ", title=" + title + "]";
 	}
+
+	
+	
+
+
+	
 	
 	
 	

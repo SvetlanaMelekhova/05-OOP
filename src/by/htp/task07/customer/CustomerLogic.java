@@ -4,11 +4,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-/*1. Счета. Клиент может иметь несколько счетов в банке. Учитывать возможность блокировки/разблокировки счета. Реализовать поиск и сортировку счетов. Вычисление общей суммы по счетам. Вычисление суммы по всем счетам, имеющим положительный и отрицательный балансы отдельно.*/
-
 public class CustomerLogic {
 	
-	// Список всех клиентов банка
 	
 		public List<Customer> allClients (Bank bank){
 			List <Customer> customers = new ArrayList <Customer>();
@@ -19,7 +16,7 @@ public class CustomerLogic {
 			return customers;
 		}
 		
-		//Поиск клиента по серии паспорта
+		
 		public List<Customer> searchClients(Bank bank, String passportId){
 			List<Customer> listClients = new ArrayList<Customer>();
 			
@@ -32,26 +29,25 @@ public class CustomerLogic {
 		}
 		
 		
-		//Поиск всех счетов клиента 
 		public List<Customer> searchAccounts(Customer customer, String passportId){
-			List<Customer> listAccounts = new ArrayList<Customer>();
+			List<Customer> listClients = new ArrayList<Customer>();
 			
-			for(Customer customer : customer.getAccounts()) {
-				if(client.getPassportIdClient().equalsIgnoreCase(passportIdClient)) {
-					listAccounts.add(i);
+			for(Account account : customer.getAccounts()) {
+				if(customer.getPassportId().equalsIgnoreCase(passportId)) {
+					listClients.add(customer);
 				}
 			}
-			return listAccounts;
+			return listClients;
 		}
 		
-		//Сортировка всех счетов клиента 
-		public List<Account> sortAccounts(Client client){
-			List<Account> listAccounts = client.getAccounts();
+		
+		public List<Account> sortAccounts(Customer customer){
+			List<Account> listAccounts = customer.getAccounts();
 			
 			listAccounts.sort(new Comparator<Account>(){
 				@Override
 				public int compare(Account o1, Account o2) {
-					if(o1.getAmountMoney() >= o2.getAmountMoney()) {
+					if(o1.getAccountBalance() >= o2.getAccountBalance()) {
 						return 1;
 					} else {
 						return -1;
@@ -61,43 +57,43 @@ public class CustomerLogic {
 			return listAccounts;
 		}
 		
-		//Сумма на всех счетах клиента
-		public int sumAllOfAccounts(Client client){
+		
+		public int sumAllOfAccounts(Customer customer){
 			int sum = 0;
-			List<Account> listAccounts = client.getAccounts();
+			List<Account> listAccounts = customer.getAccounts();
 			
 			for(Account i: listAccounts) {
 				if(!i.isStatusAccount()) {
-					sum += i.getAmountMoney();
+					sum += i.getAccountBalance();
 				}
 			}
 			return sum;
 		}
 		
-		//Сумма на всех счетах клиента с положительным балансом
-		public int sumAllOfPositiveAccounts(Client client){
+		
+		public int sumAllOfPositiveAccounts(Customer customer){
 			int sum = 0;
-			List<Account> listAccounts = client.getAccounts();
+			List<Account> listAccounts = customer.getAccounts();
 			
 			for(Account i: listAccounts) {
-				if(i.getAmountMoney() > 0) {
+				if(i.getAccountBalance() > 0) {
 					if(!i.isStatusAccount()) {
-						sum += i.getAmountMoney();
+						sum += i.getAccountBalance();
 					}
 				}
 			}
 			return sum;
 		}
 		
-		//Сумма на всех счетах клиента с отрицательным балансом
-		public int sumAllOfNegativeAccounts(Client client){
+		
+		public int sumAllOfNegativeAccounts(Customer customer){
 			int sum = 0;
-			List<Account> listAccounts = client.getAccounts();
+			List<Account> listAccounts = customer.getAccounts();
 			
 			for(Account i: listAccounts) {
-				if(i.getAmountMoney() < 0) {
+				if(i.getAccountBalance() < 0) {
 					if(!i.isStatusAccount()) {
-						sum += i.getAmountMoney();
+						sum += i.getAccountBalance();
 					}
 				}
 			}

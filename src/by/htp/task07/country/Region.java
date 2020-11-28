@@ -3,10 +3,6 @@ package by.htp.task07.country;
 import java.util.List;
 import java.util.ArrayList; 
 
-
-/*Методы: вывести на консоль столицу, количество областей, площадь, областные центры.*/
-
-
 public class Region {
 	
 	private String nameOfRegion;

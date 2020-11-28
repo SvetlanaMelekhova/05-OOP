@@ -1,7 +1,5 @@
 package by.htp.task07.country;
 
-/*Создать объект класса Государство, используя классы Область, Район, Город. Методы: вывести на консоль столицу, количество областей, площадь, областные центры.*/
-
 import java.util.List;
 
 public class View {
@@ -9,7 +7,7 @@ public class View {
 	
 	public void viewCity (City city) {
 		
-		System.out.println ("Город: " + city);
+		System.out.println ("Р“РѕСЂРѕРґ: " + city);
 	}
 	
 	public void viewDistricts (Region region ) {

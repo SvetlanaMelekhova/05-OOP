@@ -2,10 +2,6 @@ package by.htp.task07.customer;
 
 import java.util.List;
 
-
-
-/*1. Счета. Клиент может иметь несколько счетов в банке. Учитывать возможность блокировки/разблокировки счета. Реализовать поиск и сортировку счетов. Вычисление общей суммы по счетам. Вычисление суммы по всем счетам, имеющим положительный и отрицательный балансы отдельно.*/
-
 public class CustomerView {
 	
 public CustomerView () {
@@ -14,7 +10,7 @@ public CustomerView () {
 	
 	public void printCustomer (Customer customer) {
 		
-		System.out.println ("Информация о клиенте: " + customer.toString());
+		System.out.println ("РРЅС„РѕСЂРјР°С†РёСЏ Рѕ РєР»РёРµРЅС‚Рµ: " + customer.toString());
 		
 	}
 	

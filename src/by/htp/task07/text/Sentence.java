@@ -3,39 +3,44 @@ package by.htp.task07.text;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class Sentence implements PartOfText {
-	
-	private List <Word> words;
-	
-	public Sentence () {
-		
-		this.words = new ArrayList<Word>();
+
+	private List<PartOfText> sentence;
+
+	public Sentence() {
+
+		sentence = new ArrayList<PartOfText>();
 	}
-	
-	public void addWord (Word word) {
-		
-		words.add(word);
-		
+
+	public void addWord(Word word) {
+
+		sentence.add(word);
+
 	}
-	
-	public void makeSentence () {
-		System.out.print();
+
+	public void addMark(Punctuation mark) {
+
+		sentence.add(mark);
 	}
-	
-	public List<Word> getWords() {
-		return words;
+
+	public String content() {
+		String sentence = this.sentence.toString();
+		return sentence;
 	}
-	
-	public void setWords(List<Word> words) {
-		this.words = words;
+
+	public List<PartOfText> getSentence() {
+		return sentence;
+	}
+
+	public void setSentence(List<PartOfText> sentence) {
+		this.sentence = sentence;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((words == null) ? 0 : words.hashCode());
+		result = prime * result + ((sentence == null) ? 0 : sentence.hashCode());
 		return result;
 	}
 
@@ -48,25 +53,17 @@ public class Sentence implements PartOfText {
 		if (getClass() != obj.getClass())
 			return false;
 		Sentence other = (Sentence) obj;
-		if (words == null) {
-			if (other.words != null)
+		if (sentence == null) {
+			if (other.sentence != null)
 				return false;
-		} else if (!words.equals(other.words))
+		} else if (!sentence.equals(other.sentence))
 			return false;
 		return true;
 	}
 
 	@Override
 	public String toString() {
-		return "Sentence [words=" + words + "]";
+		return "Sentence [sentence=" + sentence + "]";
 	}
-
-	@Override
-	public String content() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
 
 }
